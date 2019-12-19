@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './App.css'
+import Form from "./components/form";
+import Enlist from "./components/enlist";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+  state={
+    forecast:[]
+  }
+  getWeather = async (e) => {
+    e.preventDefault();
+    const city = e.target.elements.city.value;
+    if(city){
+    const API_CALL=await fetch(`http://api.openweathermap.org/data/2.5/forecast/?q=${city}&appid=5cfb27661a39eee755aaf62d492bf507&units=metric`);
+    const response=await API_CALL.json();
+      this.setState({
+        forecast:response.list
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className="container">
+          <Form loadWeather={this.getWeather} />
+          <Enlist forecast={this.state.forecast} />
+      </div>
+    );
+  }
+};
 
 export default App;

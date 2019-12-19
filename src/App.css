@@ -1,38 +1,97 @@
-.App {
+ html {
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+.container {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQAXj4Og3gITtbHoE-wzrXycauX9QMpIqhDvhM6afKmAWhJVCuc");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 290px 490px;
+  width: 300px;
+  height: 500px;
+  border-style: solid;
+  border-width: 40px 10px 25px 10px;
+  border-radius: 15px;
+  border-color: black;
+  color: whitesmoke;
   text-align: center;
+  margin: 100px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.topnav{
+  height: 50px;
+  background-color: #2f0752;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.topnavtext{
+  margin-top: 6px;
+  margin-left: 2px;
+  height: 33px;
+  width: 230px;
+  font-size: medium;
+  text-align: center;
+  border-radius: 4px;
+  border-color: whitesmoke;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.topnavtext:hover{
+  background-color: whitesmoke;
 }
 
-.App-link {
-  color: #61dafb;
+.gobtn{
+  color: thistle;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 6.5px;
+  margin-right: 2px;
+  font-size: medium;
+  height: 35px;
+  background-color: #59512a;
+  border-radius: 20%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gobtn:hover{
+  background-color: grey;
+}
+
+.vertical-menu {
+  width: 280px;
+  height: 385px;
+  overflow-y: auto;
+}
+
+
+.vertical-menu p {
+  color: black;
+  display: block;
+  padding: 3px;
+  border-bottom: 1px solid black;
+  font-family: cursive;
+  font-weight: 500;
+  text-shadow: 4px 4px 5px maroon;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.vertical-menu p img{
+  margin: -15px;
+}
+
+.vertical-menu p {
+  margin-top: -16px;
+}
+
+.vertical-menu p:first-child {
+  margin-top: 0px;
+}
+
+.vertical-menu p:last-child{
+  border-bottom: none;
+  text-transform: none;
+}
+
+.vertical-menu p:hover {
+  background-color: #c1e6e5;
 }
